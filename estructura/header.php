@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="./">Home</a>
           </li>
           
           <li class="nav-item">
@@ -16,9 +16,9 @@
           </li>
           
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        <form class="d-flex" action="buscador.php" method="post">
+          <input class="form-control me-2" type="text" name="search" placeholder="Buscar" aria-label="Search">
+          <button class="btn btn-outline-success sombreado" type="submit">Buscar</button>
         </form>
       </div>
     </div>

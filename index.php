@@ -122,7 +122,7 @@
             <button class="btn btn-secondary editar" href="#">Editar &raquo;</button>
       </a>
          <a href="delete-receta.php?id=<?php echo $row['id']?>">
-        <button class="btn btn-secondary eliminar" href="#">Eliminar &raquo;</button>
+        <button class="btn btn-secondary eliminar" href="#">Eliminar &raquo;</button></a>
       </div>
       <div class="col-md-5">
         <a href="receta.php?id=<?php echo $row['id']?>">

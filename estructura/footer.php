@@ -5,9 +5,10 @@
     <p>&copy; 2017–2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
         <div class="contenedor-icons">
           
-            <i class="bi bi-instagram"></i>
-            <i class="bi bi-twitter"></i>
-            <i class="bi bi-facebook"></i>
+            <a href="https://www.instagram.com/somethingiscook/" target="blanck"><i class="bi bi-instagram"></i></a>
+            <a href="https://twitter.com/somethingiscook" target="blanck"><i class="bi bi-twitter"></i></a>
+            <a href="https://es-es.facebook.com/SomethingIsCooking/" target="blanck"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/Somethingiscooking" target="blanck"><i class="bi bi-youtube"></i></a>
         </div>
   </footer>
 

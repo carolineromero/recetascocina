@@ -1,17 +1,27 @@
 <?php
-        include './services/connection.php';
-
-     // Data from POST
-    $id= $_GET['id'];
-
-      // Consulta SQL
-     $sql="DELETE FROM sicrecetas WHERE id=$id"; 
-     $resultado = $conn->query($sql);
-   
-
-
-      ?>
-
+include "./services/connection.php";
+$sql = "SELECT * FROM sicrecetas";
+$result = $conn->query($sql);
+include './services/connect_test_db.php';
+$searchErr = '';
+$recetas_busca='';
+if(isset($_POST['search']))
+{
+    if(!empty($_POST['search']))
+    {
+        $search = $_POST['search'];
+        $stmt = $con->prepare("SELECT * from sicrecetas WHERE receta like '%$search%' or ingredientes like '%$search%'");
+        $stmt->execute();
+        $recetas_busca = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        //print_r($art_details);
+    }
+    else
+    {
+        $searchErr = "Introduce algun campo para buscar";
+    }
+}
+$conn->close();
+?>
 
 <!doctype html>
 <html lang="en">
@@ -21,10 +31,14 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
-    <title>Something is Cooking</title>
+    <title>Carousel Template · Bootstrap v5.2</title>
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+   
 
     <style>
       .bd-placeholder-img {
@@ -101,54 +115,50 @@
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
 
- 
+  <div class="container marketing">
+
+    
 
     <!-- START THE FEATURETTES -->
 
     <hr class="featurette-divider">
 
-   <?php 
-    if ($conn->query($sql) === TRUE) {
-      echo ("<script LANGUAGE='JavaScript'>
-    window.alert('Receta eliminada correctamente');
-    window.location.href='index.php';
-    </script>"); 
-       
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-            
-        
-
-   ?>
-        
-
+    <?php
       
-       <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1"><?php echo $row['receta']?><span class="text-muted"><?php echo $row['minireceta']?></span></h2>
-        <p class="lead"><?php echo $row['infomini']?></p>
-        <p><a class="btn btn-secondary editar" href="#">Editar &raquo;</a></p>
-        <p><a class="btn btn-secondary eliminar" href="#">Eliminar &raquo;</a></p>
-      </div>
-      <div class="col-md-5">
-        <a href="receta.php?id=<?php echo $row['id']?>">
-        <img src="<?php echo $row['img']?>" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"  preserveAspectRatio="xMidYMid slice" focusable="false" alt="">
+      
+                 if(!$recetas_busca)
+                 {
+                    echo '<tr>No data found</tr>';
+                 }
+                 else{
+                    foreach($recetas_busca as $key=>$value)
+                    {
+                        ?>
+    
         
-      </a>
-<?php
- }
 
- $conn->close();
- ?>
+    <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="<?php echo $value['img']?>" class="d-block mx-lg-auto img-fluid img-receta" alt="" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3"><?php echo $value['receta']?></h1>
+        <p class="lead"><?php echo $value['ingredientes']?></p>
+        <p class="lead"><?php echo $value['procedimiento']?></p>
+        <p class="lead"><?php echo $value['web']?></p>
+        
       </div>
     </div>
+  </div>
+  <?php
+                    }
+                 }
+                ?>
+  <hr class="featurette-divider">
+ 
 
-    <hr class="featurette-divider">
-  
-
-    <!-- /END THE FEATURETTES -->
-
-  </div><!-- /.container -->
+  </div>
 
 
   <?php

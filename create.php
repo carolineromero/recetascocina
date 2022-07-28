@@ -8,11 +8,17 @@
 </head>
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/custom.css">
 <body>
 <?php
   include './estructura/header.php';
   ?>
+<main>
 
+<?php
+include './estructura/carrusel.php';
+?>
     <div class="container">
   <main>
     
@@ -52,6 +58,30 @@
             </div>
 
             <div class="col-12">
+              <label for="ingredientes" class="form-label">Ingredientes</label>
+              <input type="text" class="form-control" name="ingredientes" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Faltan Ingredientes
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="procedimiento" class="form-label">Procedimiento - Paso a paso</label>
+              <input type="text" class="form-control" name="procedimiento" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Falta Subtitulo
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="web" class="form-label">Youtube</label>
+              <input type="text" class="form-control" name="web" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Falta web
+              </div>
+            </div>
+
+            <div class="col-12">
               <label for="img" class="form-label">Link imagen receta</label>
               <input type="text" class="form-control" name="img" placeholder="" value="" required>
               <div class="invalid-feedback">
@@ -64,12 +94,15 @@
         </form>
       </div>
     </div>
-  </main>
+  
 
-</div>
-</body>
 
 <?php
   include './estructura/footer.php';
   ?>
+      
+</main>
+</body>
+
+
 </html>

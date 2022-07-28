@@ -5,9 +5,48 @@
 }
 .contenedor-icons i{
     font-size: 40px;
-    color:red;
+    color:#00b8b6;
 }
 
-.btn-icon{
-    style:none;
+.editar{
+    background:#00b8b6;
+    border: none;
 }
+.editar :hover{
+    background:#016765;
+}
+
+.eliminar{
+    background:#00b8b6;
+    border: none;
+}
+
+.eliminar{
+    background:#016765;
+}
+
+.btn-secondary{
+    background:#00b8b6;
+    border: none;
+}
+
+.btn-outline-success{
+    background:#00b8b6;
+    color:white;
+}
+
+.btn-outline-success :hover{
+    background:#016765;
+    color:white;
+}
+
+.btn-primary{
+    background:#00b8b6;
+    border: none;
+ 
+}
+
+.btn-primary :hover{
+    background:#016765;
+}
+  

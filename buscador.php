@@ -144,13 +144,14 @@ $conn->close();
       </div>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold lh-1 mb-3"><?php echo $value['receta']?></h1>
-        <p class="lead"><?php echo $value['ingredientes']?></p>
-        <p class="lead"><?php echo $value['procedimiento']?></p>
-        <p class="lead"><?php echo $value['web']?></p>
+        <p class="lead"><?php echo $value['minireceta']?></p>
+        <p class="lead"><?php echo $value['infomini']?></p>
+     
         
       </div>
     </div>
   </div>
+  <hr class="featurette-divider">
   <?php
                     }
                  }

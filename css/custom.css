@@ -3,11 +3,11 @@
     max-height: 300px;
     object-fit: contain;
 }
-
-.editar{
-    display: flex;
+.contenedor-icons i{
+    font-size: 40px;
+    color:red;
 }
 
-.eliminar{
-    display: flex;
+.btn-icon{
+    style:none;
 }

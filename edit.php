@@ -20,7 +20,10 @@
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 <body>
-  
+<?php
+  include './estructura/header.php';
+  ?>
+
     <div class="container">
   <main>
     
@@ -85,14 +88,9 @@
     </div>
   </main>
 
-  <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2017–2022 Company Name</p>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a href="#">Privacy</a></li>
-      <li class="list-inline-item"><a href="#">Terms</a></li>
-      <li class="list-inline-item"><a href="#">Support</a></li>
-    </ul>
-  </footer>
+  <?php
+  include './estructura/footer.php';
+  ?>
 </div>
 </body>
 </html>

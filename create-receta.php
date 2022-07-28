@@ -14,8 +14,6 @@
      $sql="INSERT INTO sicrecetas (receta, minireceta, infomini, img, web, ingredientes,procedimiento) VALUES ('$receta', '$minireceta', '$infomini', '$img', '$web', '$ingredientes', '$procedimiento')";
      $resultado = $conn->query($sql);
    
-
-
       ?>
 
 

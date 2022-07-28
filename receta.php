@@ -122,8 +122,11 @@
         <img src="<?php echo $row['img']?>" class="d-block mx-lg-auto img-fluid img-receta" alt="" width="700" height="500" loading="lazy">
       </div>
       <div class="col-lg-6">
+      
         <h1 class="display-5 fw-bold lh-1 mb-3"><?php echo $row['receta']?></h1>
+        <h4>INGREDIENTES:</h4>
         <p class="lead"><?php echo $row['ingredientes']?></p>
+        <h4>ELABORACIÓN - PASO A PASO:</h4>
         <p class="lead"><?php echo $row['procedimiento']?></p>
         <p class="lead"><?php echo $row['web']?></p>
         
